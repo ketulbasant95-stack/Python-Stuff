@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 #Line Graph
 
-def linegraph(x, y):
+def linegraph():
     "Used to plot a line graph in the Cartesian plane."
 
     numx = int(input("Enter number of values of X-axis: "))
@@ -58,7 +58,7 @@ def linegraph(x, y):
 
 #Bar graph
 
-def bargraph(x, y):
+def bargraph():
     "Used to plot bar graph with given data."
 
     numx = int(input("Enter the number of values for X-axis: "))
@@ -97,7 +97,7 @@ def bargraph(x, y):
 
 #Histogram
 
-def histogram(x, bins):
+def histogram():
     ""
     numx = int(input("Enter the number of values of X-axis: "))
     bins = int(input("Enter bins: "))
@@ -131,7 +131,7 @@ def histogram(x, bins):
 
 #Scatter plot
 
-def scatter(x, y):
+def scatter():
     "Used to observe relationships between variables visually."
 
     numx = int(input("Enter the number of values of X-axis: "))
@@ -170,7 +170,7 @@ def scatter(x, y):
 
 #Pie Graph
 
-def pie(data, label):
+def pie():
     "Used to visually compare data proportions."
 
     numx = int(input("Enter the number of labels: "))
@@ -190,4 +190,5 @@ def pie(data, label):
     
     plt.pie(data, label)
     plt.title(title)
+
     plt.show()
