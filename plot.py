@@ -53,7 +53,7 @@ def linegraph():
         plt.xlabel(xaxis)
         plt.show()
     else:
-        plt.plot(xval, yval, color=color, linestyle=style, linewidth=width)
+        plt.plot(xval, yval, color=color, linestyle=linestyle, linewidth=linewidth)
         plt.title(title)
         plt.ylabel(yaxis)
         plt.xlabel(xaxis)
@@ -202,6 +202,7 @@ def pie():
     plt.pie(data, label)
     plt.title(title)
     plt.show()
+
 
 
 
