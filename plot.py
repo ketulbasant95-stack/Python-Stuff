@@ -7,13 +7,16 @@ def linegraph():
 
     numx = int(input("Enter number of values of X-axis: "))
     numy = int(input("Enter number of values of Y-axis: "))
+    xval = []
+    yval = []
+    
     for i in range(numx):
         x = eval(input("Enter the values of x-axis (one by one): "))
-        xval = [x]
+        xval.append(x)
         print("Number of values left:", numx-i)
     for j in range(numy):
         y = eval(input("Enter the values of y-axis (one by one): "))
-        yval = [y]
+        yval.append(y)
         print("Number of values left:", numy-j)
 
     xaxis = input("Define X-axis (optional): ")
@@ -63,13 +66,16 @@ def bargraph():
 
     numx = int(input("Enter the number of values for X-axis: "))
     numy = int(input("Enter the number of values for Y-axis: "))
+    xval = []
+    yval = []
+    
     for i in range(numx):
         x = eval(input("Enter the value of X-axis:"))
-        xval = [x]
+        xval.append(x)
         print("Number of entries remaining:", numx-i)
     for j in range(numy):
         y = eval(input("Enter the value of X-axis: "))
-        yval = [y]
+        yval.append(y)
         print("Number of entries remaining:", numy-j)
     
     xaxis = input("Define X-axis (optional): ")
@@ -101,14 +107,15 @@ def histogram():
     ""
     numx = int(input("Enter the number of values of X-axis: "))
     bins = int(input("Enter bins: "))
+    xval = []
     
     for i in range(numx):
         x = int(input("Enter the value of X-axis:"))
-        xval = [x]
+        xval.append(x)
         print("Number of entries remaining:", numx-i)
         
-        xaxis = input("Define X-axis (optional): ")
-        yaxis = input("Define Y-axis (optional): ")
+    xaxis = input("Define X-axis (optional): ")
+    yaxis = input("Define Y-axis (optional): ")
     title = input("Enter a title for the graph (optional): ")
     if xaxis=="":
         xaxis = "X-axis"
@@ -136,14 +143,16 @@ def scatter():
 
     numx = int(input("Enter the number of values of X-axis: "))
     numy = int(input("Enter the number of values of Y-axis: "))
+    xval = []
+    yval = [y]
     
     for i in range(numx):
         x = int(input("Enter the value of X-axis:"))
-        xval = [x]
+        xval.append(x)
         print("Number of entries remaining:", numx-i)
     for j in range(numy):
         y = int(input("Enter the vale of Y-axis: "))
-        yval = [y]
+        yval.append(y)
         print("Number of entries remaining:", numy-j)
 
     xaxis = input("Define X-axis (optional): ")
@@ -174,15 +183,17 @@ def pie():
     "Used to visually compare data proportions."
 
     numx = int(input("Enter the number of labels: "))
+    label = []
+    data = []
 
     for i in range(numx):
         x = input("Enter the label: ")
-        label = [x]
+        label.append(x)
         print("Number of entries remaining: ", numx-i)
     
     for j in range(0, len(label)):
         y = int(input("Enter the value for", label[j], ":"))
-        data = [y]
+        data.append(y)
 
     title = input("Enter title (optional): ")
     if title=="":
@@ -191,4 +202,5 @@ def pie():
     plt.pie(data, label)
     plt.title(title)
     plt.show()
+
 
