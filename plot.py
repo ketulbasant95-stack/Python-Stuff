@@ -202,5 +202,3 @@ def pie():
     plt.pie(data, label)
     plt.title(title)
     plt.show()
-
-
