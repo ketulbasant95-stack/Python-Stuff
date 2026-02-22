@@ -53,7 +53,7 @@ def linegraph():
         plt.xlabel(xaxis)
         plt.show()
     else:
-        plt.plot(x, y, color = color, style = style, width = width)
+        plt.plot(xval, yval, color = color, style = style, width = width)
         plt.title(title)
         plt.ylabel(yaxis)
         plt.xlabel(xaxis)
@@ -95,7 +95,7 @@ def bargraph():
     else:
         pass
 
-    plt.plot(x, y)
+    plt.plot(xval, yval)
     plt.title(title)
     plt.ylabel(yaxis)
     plt.xlabel(xaxis)
@@ -130,7 +130,7 @@ def histogram():
     else:
         pass
 
-    plt.hist(x, bins)
+    plt.hist(xval, bins)
     plt.title(title)
     plt.xlabel(xaxis)
     plt.ylabel(yaxis)
@@ -144,7 +144,7 @@ def scatter():
     numx = int(input("Enter the number of values of X-axis: "))
     numy = int(input("Enter the number of values of Y-axis: "))
     xval = []
-    yval = [y]
+    yval = []
     
     for i in range(numx):
         x = int(input("Enter the value of X-axis:"))
@@ -192,7 +192,7 @@ def pie():
         print("Number of entries remaining: ", numx-i)
     
     for j in range(0, len(label)):
-        y = int(input("Enter the value for", label[j], ":"))
+        y = int(input("Enter the value for {label[j]}: "))
         data.append(y)
 
     title = input("Enter title (optional): ")
