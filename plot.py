@@ -29,13 +29,13 @@ def linegraph():
     if title=="":
         title = "Graph"
 
-    null = 0
+    flag = 0
     ch = input("Would you like to modify the graph appearance? (y/n): ")
     if ch=="y":
-        null = 1
+        flag = 1
         color = input("Enter the color of line: ")
-        style = input("Enter the line style: ")
-        width = int(input("Enter the line width: "))
+        linestyle = input("Enter the line style: ")
+        linewidth = int(input("Enter the line width: "))
     else:
         pass
 
@@ -46,14 +46,14 @@ def linegraph():
     else:
         pass
 
-    if null==0:
+    if flag==0:
         plt.plot(xval, yval)
         plt.title(title)
         plt.ylabel(yaxis)
         plt.xlabel(xaxis)
         plt.show()
     else:
-        plt.plot(xval, yval, color = color, style = style, width = width)
+        plt.plot(xval, yval, color=color, linestyle=style, linewidth=width)
         plt.title(title)
         plt.ylabel(yaxis)
         plt.xlabel(xaxis)
@@ -74,7 +74,7 @@ def bargraph():
         xval.append(x)
         print("Number of entries remaining:", numx-i)
     for j in range(numy):
-        y = float(input("Enter the value of X-axis: "))
+        y = float(input("Enter the value of Y-axis: "))
         yval.append(y)
         print("Number of entries remaining:", numy-j)
     
@@ -95,7 +95,7 @@ def bargraph():
     else:
         pass
 
-    plt.plot(xval, yval)
+    plt.bar(xval, yval)
     plt.title(title)
     plt.ylabel(yaxis)
     plt.xlabel(xaxis)
@@ -104,7 +104,7 @@ def bargraph():
 #Histogram
 
 def histogram():
-    ""
+    "Used to plot a histogram of given data."
     numx = int(input("Enter the number of values of X-axis: "))
     bins = int(input("Enter bins: "))
     xval = []
@@ -151,7 +151,7 @@ def scatter():
         xval.append(x)
         print("Number of entries remaining:", numx-i)
     for j in range(numy):
-        y = float(input("Enter the vale of Y-axis: "))
+        y = float(input("Enter the value of Y-axis: "))
         yval.append(y)
         print("Number of entries remaining:", numy-j)
 
@@ -192,7 +192,7 @@ def pie():
         print("Number of entries remaining: ", numx-i)
     
     for j in range(0, len(label)):
-        y = float(input("Enter the value for {label[j]}: "))
+        y = float(input(f"Enter the value for {label[j]}: "))
         data.append(y)
 
     title = input("Enter title (optional): ")
@@ -202,5 +202,6 @@ def pie():
     plt.pie(data, label)
     plt.title(title)
     plt.show()
+
 
 
