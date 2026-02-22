@@ -11,11 +11,11 @@ def linegraph():
     yval = []
     
     for i in range(numx):
-        x = int(input("Enter the values of x-axis (one by one): "))
+        x = float(input("Enter the values of x-axis (one by one): "))
         xval.append(x)
         print("Number of values left:", numx-i)
     for j in range(numy):
-        y = eval(input("Enter the values of y-axis (one by one): "))
+        y = float(input("Enter the values of y-axis (one by one): "))
         yval.append(y)
         print("Number of values left:", numy-j)
 
@@ -70,11 +70,11 @@ def bargraph():
     yval = []
     
     for i in range(numx):
-        x = int(input("Enter the value of X-axis:"))
+        x = float(input("Enter the value of X-axis:"))
         xval.append(x)
         print("Number of entries remaining:", numx-i)
     for j in range(numy):
-        y = eval(input("Enter the value of X-axis: "))
+        y = float(input("Enter the value of X-axis: "))
         yval.append(y)
         print("Number of entries remaining:", numy-j)
     
@@ -110,7 +110,7 @@ def histogram():
     xval = []
     
     for i in range(numx):
-        x = int(input("Enter the value of X-axis:"))
+        x = float(input("Enter the value of X-axis:"))
         xval.append(x)
         print("Number of entries remaining:", numx-i)
         
@@ -147,11 +147,11 @@ def scatter():
     yval = []
     
     for i in range(numx):
-        x = int(input("Enter the value of X-axis:"))
+        x = float(input("Enter the value of X-axis:"))
         xval.append(x)
         print("Number of entries remaining:", numx-i)
     for j in range(numy):
-        y = int(input("Enter the vale of Y-axis: "))
+        y = float(input("Enter the vale of Y-axis: "))
         yval.append(y)
         print("Number of entries remaining:", numy-j)
 
@@ -192,7 +192,7 @@ def pie():
         print("Number of entries remaining: ", numx-i)
     
     for j in range(0, len(label)):
-        y = int(input("Enter the value for {label[j]}: "))
+        y = float(input("Enter the value for {label[j]}: "))
         data.append(y)
 
     title = input("Enter title (optional): ")
@@ -202,4 +202,5 @@ def pie():
     plt.pie(data, label)
     plt.title(title)
     plt.show()
+
 
