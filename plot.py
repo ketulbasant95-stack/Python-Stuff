@@ -11,7 +11,7 @@ def linegraph():
     yval = []
     
     for i in range(numx):
-        x = eval(input("Enter the values of x-axis (one by one): "))
+        x = int(input("Enter the values of x-axis (one by one): "))
         xval.append(x)
         print("Number of values left:", numx-i)
     for j in range(numy):
@@ -70,7 +70,7 @@ def bargraph():
     yval = []
     
     for i in range(numx):
-        x = eval(input("Enter the value of X-axis:"))
+        x = int(input("Enter the value of X-axis:"))
         xval.append(x)
         print("Number of entries remaining:", numx-i)
     for j in range(numy):
@@ -202,3 +202,4 @@ def pie():
     plt.pie(data, label)
     plt.title(title)
     plt.show()
+
