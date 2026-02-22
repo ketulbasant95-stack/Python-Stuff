@@ -36,7 +36,7 @@ def linegraph():
     else:
         pass
 
-    opt = int(input("Would you like to review your data? (y/n): "))
+    opt = input("Would you like to review your data? (y/n): ")
     if opt=="y":
         print(xval)
         print(yval)
@@ -82,7 +82,7 @@ def bargraph():
     if title=="":
         title = "Graph"
 
-    opt = int(input("Would you like to review your data? (y/n): "))
+    opt = input("Would you like to review your data? (y/n): ")
     if opt=="y":
         print(xval)
         print(yval)
@@ -117,7 +117,7 @@ def histogram():
     if title=="":
         title = "Graph"
 
-    opt = int(input("Would you like to review your data? (y/n): "))
+    opt = input("Would you like to review your data? (y/n): ")
     if opt=="y":
         print(xval)
     else:
@@ -156,7 +156,7 @@ def scatter():
     if title=="":
         title = "Graph"
 
-    opt = int(input("Would you like to review your data? (y/n): "))
+    opt = input("Would you like to review your data? (y/n): ")
     if opt=="y":
         print(xval)
     else:
@@ -190,5 +190,5 @@ def pie():
     
     plt.pie(data, label)
     plt.title(title)
-
     plt.show()
+
