@@ -18,7 +18,7 @@ def addToManufacturers():
     mName = input("Enter manufacturer name: ")
     country = input("Enter country of origin: ")
 
-    sqlcur.execute("insert into manufacturers values(%s,%s,%s)".format(manID, mName, country))
+    sqlcur.execute("insert into manufacturers values(%s,%s,%s)", (manID, mName, country))
 
 def addToCars():
     carID = input("Enter car ID: ")
@@ -35,7 +35,7 @@ def addToCars():
     price = int(input("Enter base price: "))
     status = input("In stock? (Y/N): ")
 
-    sqlcur.execute("insert into cars values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)".format(carID, mID, model, year, cc, engConfig, bhp, nm, gears, ftype, dTrain, price, status))
+    sqlcur.execute("insert into cars values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)", (carID, mID, model, year, cc, engConfig, bhp, nm, gears, ftype, dTrain, price, status))
 
 def addToCust():
     custID = input("Enter customer ID: ")
@@ -43,7 +43,7 @@ def addToCust():
     phno = int(input("Enter phone number: "))
     mail = input("Enter e-mail address: ")
 
-    sqlcur.execute("insert into customers values(%s,%s,%s,%s)".format(custID, custName, phno, mail))
+    sqlcur.execute("insert into customers values(%s,%s,%s,%s)", (custID, custName, phno, mail))
 
 def addToSales():
     salesID = input("Enter sales ID: ")
@@ -53,7 +53,7 @@ def addToSales():
     price = int(input("Enter total amount: "))
     status = input("Payment completed? (Y/N): ")
 
-    sqlcur.execute("insert into sales values(%s,%s,%s,%s,%s,%s)".format(salesID, carID, custID, sDate, price, status))
+    sqlcur.execute("insert into sales values(%s,%s,%s,%s,%s,%s)", (salesID, carID, custID, sDate, price, status))
 
 #modify commands: modifies selected attribute
 
@@ -171,4 +171,5 @@ def modifySales():
         else:
             print("Invalid choice, try again...")
         if input("Continue? (Y/N): ") not in "Yy":
+
             break
