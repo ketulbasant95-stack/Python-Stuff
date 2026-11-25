@@ -12,7 +12,7 @@ sqlcur = mycon.cursor()
 #sqlcur.execute("create table sales(Sale_ID char(4) primary key, Car_ID char(3), Customer_ID char(4), Sales_Date date, Price int, Payment_Status char(1));")
 #sqlcur.execute("create table customers(Customer_ID char(4) primary key, Cust_Name varchar(15) not null, Phone_No int, Email varchar(50));")
 
-#add functions: adds values to defined tables
+#Add functions: adds values to defined tables
 def addToManufacturers():
     while True:
         manID = input("Enter manufacturer ID: ")
@@ -67,8 +67,7 @@ def addToSales():
     sqlcur.execute("insert into sales values(%s,%s,%s,%s,%s,%s)", (salesID, carID, custID, sDate, price, status))
     mycon.commit()
     
-#modify commands: modifies selected attribute
-
+#Modify functions: modifies selected attribute
 def modifyManufacturers():
     manID = input("Enter manufacturer ID whose data is to be modified: ")
     print("Select attribute to modify...\n" \
@@ -185,6 +184,7 @@ def modifySales():
         if input("Continue? (Y/N): ") not in "Yy":
             break
 
+#Search function: searches and displays entire table
 def search():
     print("Select table...\n"\
           "1. Manufacturers\n"\
@@ -226,6 +226,7 @@ def search():
     else:
         print("Invalid choice, try again.")
 
+#Delete function: deletes records from table by searching by ID
 def delete():
     print("Delete table...\n"\
           "1. Manufacturers\n"\
@@ -235,4 +236,15 @@ def delete():
     ch = input("Enter your choice: ")
     if ch=="1":
         id = input("Enter manufacturer ID to delete: ")
-        sqlcur.execute(f"select * from manufacturers where 
+        sqlcur.execute(f"delete from manufacturers where manufacturer_ID = {id};")
+    elif ch=="2":
+        id = input("Enter car ID to delete: ")
+        sqlcur.execute(f"delete from manufacturers where car_ID = {id};")
+    elif ch=="3":
+        id = input("Enter customer ID to delete: ")
+        sqlcur.execute(f"delete from manufacturers where cust_ID = {id};")
+    elif ch=="4":
+        id = input("Enter sales ID to delete: ")
+        sqlcur.execute(f"delete from manufacturers where sales_ID = {id};")
+    else:
+        print("Invaid choice, try again.")
